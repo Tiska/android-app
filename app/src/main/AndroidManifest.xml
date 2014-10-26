@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="caisseapp.tiskacorp.fr.caisseapp" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name="com.orm.SugarApp"
+        android:screenOrientation="landscape">
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="DATABASE" android:value="caisse_manager.db" />
+        <meta-data android:name="VERSION" android:value="3.8.5" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="caisseapp.tiskacorp.fr.caisseapp.beans" />
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Caisse Application</string>
+    <string name="title_section1">Caisse</string>
+    <string name="title_section2">Gestion du stock</string>
+    <string name="title_section3">Historique</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Acceuil</string>
+    <string name="action_settings">Paramètres</string>
+
+    <string name="paiement_carte">carte</string>
+    <string name="paiement_cheque">cheque</string>
+    <string name="paiement_espaece">espece</string>
+
+    <string name="reduction_pourcentage">pourcentage</string>
+    <string name="reduction_valeur">valeur</string>
+
+    <string name="nouveau_client">Nouveau Client</string>
+    <string name="old_client">Trouver un Client</string>
+    <string name="anonyme_client">Anonyme</string>
+
+    <string name="nom">Nom</string>
+    <string name="prenom">Prénom</string>
+    <string name="phone">Téléphone</string>
+    <string name="adresse">Adresse</string>
+    <string name="code_postal">Code postal</string>
+    <string name="ville">Ville</string>
+    <string name="email">Email</string>
+    <string name="birthday">Date anniversaire</string>
+
+    <string name="save">Enregistrer</string>
+    <string name="next">Continuer</string>
+    <string name="find">Trouver un client</string>
+
+</resources>
