@@ -281,7 +281,9 @@ public class HomeActivity extends Activity
                         client.setNom(nom.getText().toString());
                         client.setPrenom(prenom.getText().toString());
                         client.setAdresse(adresse.getText().toString());
-                        client.setPhone(Integer.valueOf(phone.getText().toString()));
+                        if(!phone.getText().toString().isEmpty()){
+                            client.setPhone(Integer.valueOf(phone.getText().toString()));
+                        }
                         client.setCodePostal(codePostal.getText().toString());
                         client.setVille(ville.getText().toString());
                         client.setEmail(email.getText().toString());
@@ -296,14 +298,18 @@ public class HomeActivity extends Activity
                             client.setBirthday(date);
                         } catch (ParseException e) {
                             Toast toast = new Toast(getActivity());
-                            toast.makeText(getActivity(),"Erreur de parsing de la date",Toast.LENGTH_SHORT);
+                            toast.makeText(getActivity(),"Erreur de parsing de la date",Toast.LENGTH_LONG);
+                            toast.setView(v);
+                            toast.show();
 
                         }
 
                         client.save();
 
                         Toast toast = new Toast(getActivity());
-                        toast.makeText(getActivity(),"Client enregistré !",Toast.LENGTH_SHORT);
+                        toast.makeText(getActivity(),"Client enregistré !",Toast.LENGTH_LONG);
+                        toast.setView(v);
+                        toast.show();
 
                     }});
 
