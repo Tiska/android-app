@@ -3,9 +3,11 @@ package caisseapp.tiskacorp.fr.caisseapp;
 import android.app.Activity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -278,6 +280,12 @@ public class HomeActivity extends Activity
                     public void onClick(View v) {
 
                         Client client = new Client();
+                        if(nom.getText().toString().isEmpty() && prenom.getText().toString().isEmpty()){
+                            Toast toast = new Toast(getActivity());
+                            toast.makeText(getActivity(),"Le client doit au moins avoir un nom et un prénom !",Toast.LENGTH_LONG);
+                            toast.setView(getActivity().getCurrentFocus());
+                            toast.show();
+                        }
                         client.setNom(nom.getText().toString());
                         client.setPrenom(prenom.getText().toString());
                         client.setAdresse(adresse.getText().toString());
@@ -299,17 +307,20 @@ public class HomeActivity extends Activity
                         } catch (ParseException e) {
                             Toast toast = new Toast(getActivity());
                             toast.makeText(getActivity(),"Erreur de parsing de la date",Toast.LENGTH_LONG);
-                            toast.setView(v);
+                            toast.setView(getActivity().getCurrentFocus());
                             toast.show();
 
                         }
 
-                        client.save();
+                        if(!nom.getText().toString().isEmpty() && !prenom.getText().toString().isEmpty()){
+                            client.save();
+                            Toast toast = new Toast(getActivity());
+                            toast.makeText(getActivity(),"Client enregistré !",Toast.LENGTH_LONG);
+                            toast.setView(getActivity().getCurrentFocus());
+                            toast.show();
 
-                        Toast toast = new Toast(getActivity());
-                        toast.makeText(getActivity(),"Client enregistré !",Toast.LENGTH_LONG);
-                        toast.setView(v);
-                        toast.show();
+                        }
+
 
                     }});
 
@@ -323,25 +334,16 @@ public class HomeActivity extends Activity
 
                 List<Client> clientsList = Client.listAll(Client.class);
 
-                ArrayList<String> clientsNom = new ArrayList<String>();
-                ArrayList<String> clientsPrenom = new ArrayList<String>();
+                final ArrayList<String> clientsNom = new ArrayList<String>();
                 for(Client client :clientsList){
                     if(client.getNom()!=null){
-                        clientsNom.add(client.getNom().toString());
-                    }
-                    if(client.getPrenom()!=null){
-                        clientsPrenom.add(client.getPrenom().toString());
+                        clientsNom.add(client.getNom().toString()+" "+client.getPrenom());
                     }
 
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 R.layout.list_view_client, R.id.textViewNom, clientsNom.toArray(new String[clientsNom.size()]));
-
-                clients.setAdapter(adapter);
-
-                adapter = new ArrayAdapter<String>(getActivity(),
-                        R.layout.list_view_client, R.id.textViewPrenom, clientsPrenom.toArray(new String[clientsPrenom.size()]));
 
                 clients.setAdapter(adapter);
 
@@ -373,8 +375,48 @@ public class HomeActivity extends Activity
                     }
                 });
 
-            }
+                clients.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                                   final int arg2, long arg3) {
+
+
+                        AlertDialog.Builder alert = new AlertDialog.Builder(
+                                getActivity());
+                        alert.setTitle("Alert!!");
+                        alert.setMessage("Voulez vous supprimer ce client ?");
+                        alert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //do your work here
+
+                                clientsNom.remove(arg2);
+                                adapter.notifyDataSetChanged();
+
+                                dialog.dismiss();
+
+                            }
+                        });
+                        alert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+                            }
+                        });
+
+                        alert.show();
+
+
+                        return false;
+                    }
+
+                });
+
+            }
 
             return rootView;
         }

@@ -4,19 +4,10 @@
     android:orientation="horizontal"
     android:background="@drawable/list_background">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceListItem"
         android:id="@+id/textViewNom" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItem"
-        android:id="@+id/textViewPrenom" />
-
-
 
 </LinearLayout>
