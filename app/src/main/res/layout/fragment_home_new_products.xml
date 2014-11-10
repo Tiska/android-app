@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".HomeActivity$PlaceholderFragment"
+    android:layout_weight="1">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/picto_women"
+            android:background="#ffffffff"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prestations"
+            android:id="@+id/textView"
+            android:layout_below="@+id/imageButton"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton2"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/picto_women"
+            android:background="#ffffffff"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/produits"
+            android:id="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imageButton2"
+            android:paddingTop="5dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+

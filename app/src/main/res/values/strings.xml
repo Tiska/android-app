@@ -33,5 +33,9 @@
     <string name="save">Enregistrer</string>
     <string name="next">Continuer</string>
     <string name="find">Trouver un client</string>
+    <string name="prestations">Prestations</string>
+    <string name="produits">Produits</string>
+    <string name="find_category">Trouver une catégorie</string>
+    <string name="new_product">Nouveau</string>
 
 </resources>

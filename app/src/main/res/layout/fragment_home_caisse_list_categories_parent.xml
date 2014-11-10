@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".HomeActivity$PlaceholderFragment"
+    android:layout_weight="1">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:background="@drawable/shadow"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        >
+
+        <EditText android:id="@+id/inputSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/find_category"
+            android:inputType="textVisiblePassword"/>
+
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scrollbars="vertical"
+            android:id="@+id/listView"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:id="@+id/buttonnext"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_product"
+            android:id="@+id/buttonNew"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@string/save"
+            android:id="@+id/buttonOk"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <EditText android:id="@+id/inputNewCategory"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:hint="@string/new_product"
+            android:inputType="textVisiblePassword"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+            <!-- Content here -->
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
